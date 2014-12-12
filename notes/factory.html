@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        /* function Audi() {
+         }
+
+        function BMW() {
+        }
+
+        function Mercedes() {
+
+        }
+
+        var a6 = new Audi();
+        var i328 = new BMW();
+        var clk = new Mercedes();
+        */
+        // use factory because I don't know the type of constructor until runtime, not compile time
+
+
+
+        var Factory = {
+            create: function(make, model) {
+                // run appropriate constructor from makes
+                for ( var i = 0, len = Factory.makes.length; i < len; i++) {
+                    if ( Factory.makes[i].name === make) {
+                        car = new Factory.makes[i]();
+                        console.log(car);
+                        return car;
+                    }
+                }
+
+                // add wheels onto object
+
+                // return object
+            },
+            makes: [function Audi() {
+                this.engine = 'Quattro'
+            }, function BMW() {}, function Mercedes() {}]
+        }
+
+
+        var audi1 = Factory.create('Audi', 'a6');
+        var bmw1 = Factory.create('BMW', 'd3');
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+
+        // prototype attribute vs prototype property
+        // object attributes - prototype, class, extensible
+
+
+        var z = { identifier: 'iden123' };
+        var x = Object.create(z);
+        var y = {name: 'chris' };
+
+        console.log(Object.getPrototypeOf(x));
+        // attributers are different than properties - only metadata ( configurable writeable ect)
+        Object.defineProperty( x, 'name', {  // defineProperties
+            writable: false,
+            enumerable: false,
+            configurable: false
+        });
+
+        x.name = 'Rice Li';
+        console.log(x.name);
+
+
+        function equals(a, b) {
+            for ( var prop in a) {
+                if ( prop in b && a[prop] === b[prop] ) {
+
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        console.log(equals(x,y));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

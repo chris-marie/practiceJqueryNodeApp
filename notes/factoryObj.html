@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+
+        var Factory = {
+            create: function(make, model) {
+                // run appropriate constructor from makes
+                var car = new Factory.makes[make]();
+
+                // add wheels onto object
+
+                // return object
+            },
+            makes: {
+                function Audi(){
+            this.engine = 'Quattro'
+        }
+        ,
+        function BMW() {
+        }
+        ,
+        function Mercedes() {
+        }
+        }
+        }
+
+
+        var audi1 = Factory.create('Audi', 'a6');
+        var bmw1 = Factory.create('BMW', 'd3');
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
